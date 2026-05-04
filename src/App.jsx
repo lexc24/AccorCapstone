@@ -27,69 +27,65 @@ export default function App() {
   }, []);
 
   return (
-    <div style={{ fontFamily: "Arial, sans-serif", background: "#f4f4f4", minHeight: "100vh" }}>
+    <div style={{ fontFamily: "Arial, sans-serif", background: "#f9f9f9", minHeight: "100vh" }}>
 
       {/* Navbar */}
-      <div style={{ background: "#232F3E", color: "white", padding: "12px 20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <h1 style={{ fontSize: "16px" }}>Agent Portal</h1>
-        <span style={{ fontSize: "13px", color: "#aaa" }}>Logged in as: Agent Name</span>
+      <div style={{ background: "#123456", color: "white", padding: "14px 32px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <h1 style={{ fontSize: "18px", fontWeight: "600" }}>Accor Hotels</h1>
+        <nav style={{ display: "flex", gap: "24px", fontSize: "14px" }}>
+          <span style={{ cursor: "pointer", color: "#ccc" }}>Home</span>
+          <span style={{ cursor: "pointer", color: "#ccc" }}>My Booking</span>
+          <span style={{ cursor: "pointer", color: "white", fontWeight: "600" }}>Support</span>
+        </nav>
       </div>
 
-      <div style={{ display: "flex", height: "calc(100vh - 44px)" }}>
+      {/* Hero */}
+      <div style={{ background: "#123456", color: "white", padding: "60px 32px", textAlign: "center" }}>
+        <h2 style={{ fontSize: "32px", fontWeight: "700", marginBottom: "12px" }}>How can we help you?</h2>
+        <p style={{ fontSize: "16px", color: "#aac4e8", maxWidth: "500px", margin: "0 auto" }}>
+          Our support team is available 24/7. Chat with us, request a callback, or browse common topics below.
+        </p>
+      </div>
 
-        {/* Sidebar */}
-        <div style={{ width: "240px", background: "white", borderRight: "1px solid #ddd", padding: "16px", display: "flex", flexDirection: "column", gap: "20px" }}>
-          <div>
-            <h3 style={{ fontSize: "11px", textTransform: "uppercase", color: "#888", marginBottom: "8px" }}>Agent Status</h3>
-            <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "13px" }}>
-              <div style={{ width: "9px", height: "9px", borderRadius: "50%", background: "#1D9E75" }} />
-              Available
+      {/* Support options */}
+      <div style={{ maxWidth: "800px", margin: "40px auto", padding: "0 24px" }}>
+        <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", justifyContent: "center", marginBottom: "40px" }}>
+          {[
+            { icon: "💬", title: "Live Chat", desc: "Chat with an agent now" },
+            { icon: "📞", title: "Request Callback", desc: "We'll call you back shortly" },
+            { icon: "📧", title: "Email Us", desc: "Get a response within 24hrs" },
+          ].map((item) => (
+            <div key={item.title} style={{ background: "white", border: "1px solid #ddd", borderRadius: "8px", padding: "24px", textAlign: "center", flex: "1", minWidth: "180px", cursor: "pointer" }}>
+              <div style={{ fontSize: "28px", marginBottom: "8px" }}>{item.icon}</div>
+              <div style={{ fontWeight: "600", fontSize: "15px", marginBottom: "4px" }}>{item.title}</div>
+              <div style={{ fontSize: "13px", color: "#888" }}>{item.desc}</div>
             </div>
-          </div>
-
-          <div>
-            <h3 style={{ fontSize: "11px", textTransform: "uppercase", color: "#888", marginBottom: "8px" }}>Quick Links</h3>
-            <ul style={{ paddingLeft: "16px", fontSize: "13px", color: "#444", lineHeight: "1.8" }}>
-              <li>Knowledge Base</li>
-              <li>Escalation Guide</li>
-              <li>Call Scripts</li>
-              <li>Team Directory</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 style={{ fontSize: "11px", textTransform: "uppercase", color: "#888", marginBottom: "8px" }}>Shift Info</h3>
-            <p style={{ fontSize: "13px", color: "#444", lineHeight: "1.6" }}>Queue: Billing Support</p>
-            <p style={{ fontSize: "13px", color: "#444" }}>Shift: 9am – 5pm</p>
-          </div>
+          ))}
         </div>
 
-        {/* Main content */}
-        <div style={{ flex: 1, padding: "24px", overflowY: "auto" }}>
-          <h2 style={{ fontSize: "18px", marginBottom: "16px", color: "#232F3E" }}>Dashboard</h2>
-
-          {/* Metric cards */}
-          <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", marginBottom: "24px" }}>
-            {[
-              { label: "Calls today", value: "12" },
-              { label: "Avg handle time", value: "4:32" },
-              { label: "In queue", value: "7" },
-              { label: "CSAT", value: "94%" },
-            ].map((card) => (
-              <div key={card.label} style={{ background: "white", border: "1px solid #ddd", borderRadius: "6px", padding: "16px 20px", minWidth: "160px" }}>
-                <div style={{ fontSize: "11px", color: "#888", textTransform: "uppercase", marginBottom: "4px" }}>{card.label}</div>
-                <div style={{ fontSize: "24px", fontWeight: "600", color: "#232F3E" }}>{card.value}</div>
-              </div>
-            ))}
-          </div>
-
-          {/* Placeholder */}
-          <div style={{ background: "white", border: "1px dashed #ccc", borderRadius: "6px", padding: "40px", textAlign: "center", color: "#aaa", fontSize: "14px" }}>
-            Recent contacts / activity feed goes here
-          </div>
+        {/* FAQ */}
+        <h3 style={{ fontSize: "18px", fontWeight: "600", marginBottom: "16px", color: "#123456" }}>Common Questions</h3>
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+          {[
+            "How do I modify or cancel my reservation?",
+            "What is your cancellation policy?",
+            "How do I join the loyalty program?",
+            "I was charged incorrectly — what do I do?",
+            "How do I request a late checkout?",
+          ].map((q) => (
+            <div key={q} style={{ background: "white", border: "1px solid #ddd", borderRadius: "6px", padding: "14px 18px", fontSize: "14px", color: "#333", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              {q}
+              <span style={{ color: "#888", fontSize: "18px" }}>›</span>
+            </div>
+          ))}
         </div>
-
       </div>
+
+      {/* Footer */}
+      <div style={{ textAlign: "center", padding: "24px", fontSize: "12px", color: "#aaa", borderTop: "1px solid #eee", marginTop: "40px" }}>
+        © 2026 Accor Hotels · All rights reserved
+      </div>
+
     </div>
   );
 }
