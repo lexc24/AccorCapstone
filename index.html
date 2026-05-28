@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Support | LUMINA HOTELS</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Support | LUMINA HOTELS</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -86,173 +91,230 @@
                         "label-md": ["Montserrat"]
                     },
                     "fontSize": {
-                        "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
-                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
-                        "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
-                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
-                        "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                        "headline-sm": ["20px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }]
                     }
                 },
             },
         }
     </script>
-<style>
+    <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
             transition: all 0.3s ease;
         }
+
         .accordion-content {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-out, opacity 0.3s ease;
             opacity: 0;
         }
+
         .accordion-item.active .accordion-content {
             max-height: 200px;
             opacity: 1;
             padding-bottom: 24px;
         }
+
         .accordion-item.active .gold-icon {
             transform: rotate(180deg);
         }
+
         body {
             min-height: max(884px, 100dvh);
         }
     </style>
 </head>
+
 <body class="bg-surface font-body-md text-on-surface antialiased">
-<!-- TopAppBar -->
-<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop h-20 max-w-container-max mx-auto bg-surface dark:bg-inverse-surface border-b border-primary/5 dark:border-white/5 shadow-sm">
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-primary dark:text-inverse-primary" data-icon="spa">spa</span>
-<div class="font-headline-sm text-headline-sm font-bold tracking-widest text-primary dark:text-inverse-primary uppercase">
+    <!-- TopAppBar -->
+    <header
+        class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop h-20 max-w-container-max mx-auto bg-surface dark:bg-inverse-surface border-b border-primary/5 dark:border-white/5 shadow-sm">
+        <div class="flex items-center gap-4">
+            <span class="material-symbols-outlined text-primary dark:text-inverse-primary" data-icon="spa">spa</span>
+            <div
+                class="font-headline-sm text-headline-sm font-bold tracking-widest text-primary dark:text-inverse-primary uppercase">
                 LUMINA HOTELS
             </div>
-</div>
-<nav class="hidden md:flex gap-gutter items-center">
-<a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300" href="#">Concierge</a>
-<a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300" href="#">Rooms</a>
-<a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300" href="#">Wellness</a>
-<a class="text-secondary dark:text-secondary-fixed border-b-2 border-secondary pb-1 font-label-md text-label-md" href="#">Contact</a>
-</nav>
-<div class="md:hidden">
-<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
-</div>
-</header>
-<main class="pt-20">
-<!-- Hero Section -->
-<section class="bg-primary-container py-[120px] px-margin-mobile flex flex-col items-center justify-center text-center">
-<h1 class="font-display-lg text-display-lg text-white mb-unit*4 max-w-4xl">How can we help you?</h1>
-<p class="font-body-lg text-body-lg text-surface-variant/80 max-w-2xl mx-auto mt-4">
-                Our support team is available 24/7. Request a callback, browse common topics, or send us a message below.
+        </div>
+        <nav class="hidden md:flex gap-gutter items-center">
+            <a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300"
+                href="#">Concierge</a>
+            <a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300"
+                href="#">Rooms</a>
+            <a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300"
+                href="#">Wellness</a>
+            <a class="text-secondary dark:text-secondary-fixed border-b-2 border-secondary pb-1 font-label-md text-label-md"
+                href="#">Contact</a>
+        </nav>
+        <div class="md:hidden">
+            <span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+        </div>
+    </header>
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section
+            class="bg-primary-container py-[120px] px-margin-mobile flex flex-col items-center justify-center text-center">
+            <h1 class="font-display-lg text-display-lg text-white mb-unit*4 max-w-4xl">How can we help you?</h1>
+            <p class="font-body-lg text-body-lg text-surface-variant/80 max-w-2xl mx-auto mt-4">
+                Our support team is available 24/7. Request a callback, browse common topics, or send us a message
+                below.
             </p>
-<div class="mt-12 w-full max-w-3xl relative">
-<input class="w-full bg-white border-none py-6 px-8 shadow-[0_10px_40px_rgba(11,30,54,0.1)] focus:ring-2 focus:ring-secondary/50 rounded-lg text-body-lg" placeholder="Search for help topics..." type="text"/>
-<span class="material-symbols-outlined absolute right-6 top-1/2 -translate-y-1/2 text-primary text-2xl" data-icon="search">search</span>
-</div>
-</section>
-<!-- Quick Action Cards - Expanded for Desktop -->
-<section class="max-w-container-max mx-auto px-margin-desktop -mt-16 mb-section-gap">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter max-w-4xl mx-auto">
-<!-- Card 1: Request Callback -->
-<div class="bg-white p-10 border border-outline-variant/10 shadow-[0_20px_50px_rgba(11,30,54,0.08)] hover:border-secondary transition-all group flex flex-col items-center text-center">
-<div class="mb-6">
-<span class="material-symbols-outlined text-[48px] text-secondary" data-icon="call">call</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-primary mb-2">Request Callback</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-8">We'll call you back shortly to assist with your needs</p>
-<button class="font-label-md text-label-md text-secondary border-b border-secondary/30 pb-1 group-hover:border-secondary transition-all uppercase tracking-widest">Schedule Call</button>
-</div>
-<!-- Card 2: Email Us -->
-<div class="bg-white p-10 border border-outline-variant/10 shadow-[0_20px_50px_rgba(11,30,54,0.08)] hover:border-secondary transition-all group flex flex-col items-center text-center">
-<div class="mb-6">
-<span class="material-symbols-outlined text-[48px] text-secondary" data-icon="mail">mail</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-primary mb-2">Email Us</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-8">Get a professional response from our concierge within 24hrs</p>
-<button class="font-label-md text-label-md text-secondary border-b border-secondary/30 pb-1 group-hover:border-secondary transition-all uppercase tracking-widest">Send Message</button>
-</div>
-</div>
-</section>
-<!-- FAQ Section -->
-<section class="max-w-container-max mx-auto px-margin-desktop mb-section-gap">
-<div class="max-w-3xl mx-auto">
-<h2 class="font-headline-md text-headline-md text-primary-container text-center mb-12">Common Questions</h2>
-<div class="space-y-4">
-<!-- FAQ 1 -->
-<div class="accordion-item border-b border-primary/10 transition-all cursor-pointer bg-white/50 px-6 rounded-lg" onclick="toggleAccordion(this)">
-<div class="flex justify-between items-center py-6">
-<span class="font-body-lg text-body-lg font-semibold text-primary">How do I modify or cancel my reservation?</span>
-<span class="material-symbols-outlined gold-icon text-secondary" data-icon="expand_more">expand_more</span>
-</div>
-<div class="accordion-content">
-<p class="font-body-md text-body-md text-on-surface-variant">Our automated systems and concierge team are available to assist you. You can manage your booking through the 'My Bookings' section of our website or mobile app by logging into your account.</p>
-</div>
-</div>
-<!-- FAQ 2 -->
-<div class="accordion-item border-b border-primary/10 transition-all cursor-pointer bg-white/50 px-6 rounded-lg" onclick="toggleAccordion(this)">
-<div class="flex justify-between items-center py-6">
-<span class="font-body-lg text-body-lg font-semibold text-primary">What is your cancellation policy?</span>
-<span class="material-symbols-outlined gold-icon text-secondary" data-icon="expand_more">expand_more</span>
-</div>
-<div class="accordion-content">
-<p class="font-body-md text-body-md text-on-surface-variant">Cancellation policies vary by booking type and location. Generally, modifications must be made at least 48 hours prior to check-in for a full refund. Please review your specific confirmation email for details or contact your hotel directly.</p>
-</div>
-</div>
-<!-- FAQ 3 -->
-<div class="accordion-item border-b border-primary/10 transition-all cursor-pointer bg-white/50 px-6 rounded-lg" onclick="toggleAccordion(this)">
-<div class="flex justify-between items-center py-6">
-<span class="font-body-lg text-body-lg font-semibold text-primary">What are your standard customer service hours?</span>
-<span class="material-symbols-outlined gold-icon text-secondary" data-icon="expand_more">expand_more</span>
-</div>
-<div class="accordion-content">
-<p class="font-body-md text-body-md text-on-surface-variant">Our automated systems are available 24/7. Our global concierge and phone support teams are also available around the clock to ensure your stay is perfect regardless of your time zone.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Decorative Image Section -->
-<section class="w-full h-[500px] overflow-hidden mb-section-gap px-margin-desktop">
-<div class="w-full h-full max-w-container-max mx-auto relative group overflow-hidden rounded-xl">
-<img alt="Lumina Hotels Hospitality" class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXkdd2zbR6MEQxhxKbdOWWfURS659gFXROWml2III8AmI6B1Xa3pcHKowaczov5AFqUESQjCXoFlIPqB18YoRkLJ9U7FDleG0M7zlzDp52wFoNDuQ0wp4941XKhQgroOTnZhj_GK4YObBrG_MkD3u7DDcdaDT91YyEHRHoFX8lz3-96FVnZheZJabEjHNy80AkOeluTLDocqACotF_qH04JEo7w81AUw8zebh7hL1hIf6C-cO3jn0b85b-7wlUTDJkqs0dM9oFw34"/>
-<div class="absolute inset-0 bg-primary/30"></div>
-<div class="absolute bottom-16 left-16 text-white max-w-xl">
-<p class="font-label-md text-label-md uppercase tracking-[0.2em] mb-4 text-secondary-fixed">Excellence in Service</p>
-<h3 class="font-display-lg text-4xl md:text-5xl leading-tight">Your comfort is our <br/>absolute priority.</h3>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="w-full py-12 px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-gutter bg-surface-container-low dark:bg-surface-container border-t border-primary/5 dark:border-white/5">
-<div class="font-headline-sm text-headline-sm font-bold text-primary dark:text-inverse-primary uppercase tracking-widest">
+            <div class="mt-12 w-full max-w-3xl relative">
+                <input
+                    class="w-full bg-white border-none py-6 px-8 shadow-[0_10px_40px_rgba(11,30,54,0.1)] focus:ring-2 focus:ring-secondary/50 rounded-lg text-body-lg"
+                    placeholder="Search for help topics..." type="text" />
+                <span class="material-symbols-outlined absolute right-6 top-1/2 -translate-y-1/2 text-primary text-2xl"
+                    data-icon="search">search</span>
+            </div>
+        </section>
+        <!-- Quick Action Cards - Expanded for Desktop -->
+        <section class="max-w-container-max mx-auto px-margin-desktop -mt-16 mb-section-gap">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter max-w-4xl mx-auto">
+                <!-- Card 1: Request Callback -->
+                <div
+                    class="bg-white p-10 border border-outline-variant/10 shadow-[0_20px_50px_rgba(11,30,54,0.08)] hover:border-secondary transition-all group flex flex-col items-center text-center">
+                    <div class="mb-6">
+                        <span class="material-symbols-outlined text-[48px] text-secondary" data-icon="call">call</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-primary mb-2">Request Callback</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-8">We'll call you back shortly to
+                        assist with your needs</p>
+                    <button
+                        class="font-label-md text-label-md text-secondary border-b border-secondary/30 pb-1 group-hover:border-secondary transition-all uppercase tracking-widest">Schedule
+                        Call</button>
+                </div>
+                <!-- Card 2: Email Us -->
+                <div
+                    class="bg-white p-10 border border-outline-variant/10 shadow-[0_20px_50px_rgba(11,30,54,0.08)] hover:border-secondary transition-all group flex flex-col items-center text-center">
+                    <div class="mb-6">
+                        <span class="material-symbols-outlined text-[48px] text-secondary" data-icon="mail">mail</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-primary mb-2">Email Us</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-8">Get a professional response from
+                        our concierge within 24hrs</p>
+                    <button
+                        class="font-label-md text-label-md text-secondary border-b border-secondary/30 pb-1 group-hover:border-secondary transition-all uppercase tracking-widest">Send
+                        Message</button>
+                </div>
+            </div>
+        </section>
+        <!-- FAQ Section -->
+        <section class="max-w-container-max mx-auto px-margin-desktop mb-section-gap">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="font-headline-md text-headline-md text-primary-container text-center mb-12">Common Questions
+                </h2>
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="accordion-item border-b border-primary/10 transition-all cursor-pointer bg-white/50 px-6 rounded-lg"
+                        onclick="toggleAccordion(this)">
+                        <div class="flex justify-between items-center py-6">
+                            <span class="font-body-lg text-body-lg font-semibold text-primary">How do I modify or cancel
+                                my reservation?</span>
+                            <span class="material-symbols-outlined gold-icon text-secondary"
+                                data-icon="expand_more">expand_more</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p class="font-body-md text-body-md text-on-surface-variant">Our automated systems and
+                                concierge team are available to assist you. You can manage your booking through the 'My
+                                Bookings' section of our website or mobile app by logging into your account.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 2 -->
+                    <div class="accordion-item border-b border-primary/10 transition-all cursor-pointer bg-white/50 px-6 rounded-lg"
+                        onclick="toggleAccordion(this)">
+                        <div class="flex justify-between items-center py-6">
+                            <span class="font-body-lg text-body-lg font-semibold text-primary">What is your cancellation
+                                policy?</span>
+                            <span class="material-symbols-outlined gold-icon text-secondary"
+                                data-icon="expand_more">expand_more</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p class="font-body-md text-body-md text-on-surface-variant">Cancellation policies vary by
+                                booking type and location. Generally, modifications must be made at least 48 hours prior
+                                to check-in for a full refund. Please review your specific confirmation email for
+                                details or contact your hotel directly.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 3 -->
+                    <div class="accordion-item border-b border-primary/10 transition-all cursor-pointer bg-white/50 px-6 rounded-lg"
+                        onclick="toggleAccordion(this)">
+                        <div class="flex justify-between items-center py-6">
+                            <span class="font-body-lg text-body-lg font-semibold text-primary">What are your standard
+                                customer service hours?</span>
+                            <span class="material-symbols-outlined gold-icon text-secondary"
+                                data-icon="expand_more">expand_more</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p class="font-body-md text-body-md text-on-surface-variant">Our automated systems are
+                                available 24/7. Our global concierge and phone support teams are also available around
+                                the clock to ensure your stay is perfect regardless of your time zone.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Decorative Image Section -->
+        <section class="w-full h-[500px] overflow-hidden mb-section-gap px-margin-desktop">
+            <div class="w-full h-full max-w-container-max mx-auto relative group overflow-hidden rounded-xl">
+                <img alt="Lumina Hotels Hospitality"
+                    class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXkdd2zbR6MEQxhxKbdOWWfURS659gFXROWml2III8AmI6B1Xa3pcHKowaczov5AFqUESQjCXoFlIPqB18YoRkLJ9U7FDleG0M7zlzDp52wFoNDuQ0wp4941XKhQgroOTnZhj_GK4YObBrG_MkD3u7DDcdaDT91YyEHRHoFX8lz3-96FVnZheZJabEjHNy80AkOeluTLDocqACotF_qH04JEo7w81AUw8zebh7hL1hIf6C-cO3jn0b85b-7wlUTDJkqs0dM9oFw34" />
+                <div class="absolute inset-0 bg-primary/30"></div>
+                <div class="absolute bottom-16 left-16 text-white max-w-xl">
+                    <p class="font-label-md text-label-md uppercase tracking-[0.2em] mb-4 text-secondary-fixed">
+                        Excellence in Service</p>
+                    <h3 class="font-display-lg text-4xl md:text-5xl leading-tight">Your comfort is our <br />absolute
+                        priority.</h3>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="w-full py-12 px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-gutter bg-surface-container-low dark:bg-surface-container border-t border-primary/5 dark:border-white/5">
+        <div
+            class="font-headline-sm text-headline-sm font-bold text-primary dark:text-inverse-primary uppercase tracking-widest">
             LUMINA HOTELS
         </div>
-<div class="flex flex-wrap justify-center gap-10 mt-6 md:mt-0">
-<a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300" href="#">Privacy Policy</a>
-<a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300" href="#">Terms of Service</a>
-<a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300" href="#">Accessibility</a>
-<a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300" href="#">Global Support</a>
-</div>
-<div class="mt-8 md:mt-0 text-on-surface-variant font-caption text-caption opacity-60">
+        <div class="flex flex-wrap justify-center gap-10 mt-6 md:mt-0">
+            <a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300"
+                href="#">Privacy Policy</a>
+            <a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300"
+                href="#">Terms of Service</a>
+            <a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300"
+                href="#">Accessibility</a>
+            <a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300"
+                href="#">Global Support</a>
+        </div>
+        <div class="mt-8 md:mt-0 text-on-surface-variant font-caption text-caption opacity-60">
             © 2024 LUMINA HOTELS &amp; RESORTS. ALL RIGHTS RESERVED.
         </div>
-</footer>
-<!-- AMAZON CONNECT EMBED CODE START -->
-<div id="amazon-connect-chat-container" style="position: fixed; bottom: 40px; right: 40px; z-index: 9999;">
-<div class="hover:scale-110" style="background-color: #0B1E36; color: white; padding: 15px; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 30px rgba(0,0,0,0.4); cursor: pointer; transition: transform 0.3s ease;">
-<span class="text-2xl">💬</span>
-</div>
-</div>
-<!-- AMAZON CONNECT EMBED CODE END -->
-<script>
+    </footer>
+    <script type="text/javascript">
+            (function (w, d, x, id) {
+                s = d.createElement('script');
+                s.src = 'https://accor-instance.my.connect.aws/connectwidget/static/amazon-connect-chat-interface-client.js';
+                s.async = 1;
+                s.id = id;
+                d.getElementsByTagName('head')[0].appendChild(s);
+                w[x] = w[x] || function () { (w[x].ac = w[x].ac || []).push(arguments) };
+            })(window, document, 'amazon_connect', '9de6dec2-6bca-4ba6-aeea-866d9d6e3827');
+        amazon_connect('styles', { iconType: 'CHAT_VOICE', openChat: { color: '#ffffff', backgroundColor: '#123456' }, closeChat: { color: '#ffffff', backgroundColor: '#123456' } });
+        amazon_connect('snippetId', 'QVFJREFIaDRobWZ4TDRrQys5SXJsU0RsT2NjaHpDOEQvN3ZqSEZkQWdhY1I3SUhoUXdHdTAySW5vWlBBT2NKVndFdVl3YnVKQUFBQWJqQnNCZ2txaGtpRzl3MEJCd2FnWHpCZEFnRUFNRmdHQ1NxR1NJYjNEUUVIQVRBZUJnbGdoa2dCWlFNRUFTNHdFUVFNNXJTa3FmdFR1eHd1b0FtREFnRVFnQ3Z3UFV3eUNVL3BnU1pqeXc2b09BNVczYVIxNG5GU3dIeitMQi9JRkZsdHVYSnZySEluUi9VUXhKL0c6Om9Balp6bmcxR3JxVGZoQmd0Yllqd2ZQdGxBQ25YbnM1dExGK05uUjdUc09XeXg0ZFdSbmFIZG92RkxPclRHMHkvZE81blJRekZTVitYVmhBNTJqZkJ3SnMxU0dMZjlMZWFiemJIMmJvcjV1ZWhJYWdqQ200ZXp5Nk5UOTRmY1AvcnZmQXJQNU05dEVpUTBvMmN3MmlrKzRRZHBjOEdBTT0=');
+        amazon_connect('supportedMessagingContentTypes', ['text/plain', 'text/markdown', 'application/vnd.amazonaws.connect.message.interactive', 'application/vnd.amazonaws.connect.message.interactive.response']);
+    </script>
+    <script>
         function toggleAccordion(element) {
             const isActive = element.classList.contains('active');
-            
+
             // Close all
             document.querySelectorAll('.accordion-item').forEach(item => {
                 item.classList.remove('active');
@@ -283,4 +345,6 @@
             observer.observe(el);
         });
     </script>
-</body></html>
+</body>
+
+</html>
