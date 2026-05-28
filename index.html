@@ -295,55 +295,53 @@
                 href="#">Global Support</a>
         </div>
         <div class="mt-8 md:mt-0 text-on-surface-variant font-caption text-caption opacity-60">
-            © 2024 LUMINA HOTELS &amp; RESORTS. ALL RIGHTS RESERVED.
+            © 2024 ACCOR HOTELS &amp; RESORTS. ALL RIGHTS RESERVED.
         </div>
     </footer>
     <script type="text/javascript">
             (function (w, d, x, id) {
                 s = d.createElement('script');
-                s.src = 'https://accor-instance.my.connect.aws/connectwidget/static/amazon-connect-chat-interface-client.js';
+                s.src = 'https://lexaws222-demo.my.connect.aws/connectwidget/static/amazon-connect-chat-interface-client.js';
                 s.async = 1;
                 s.id = id;
                 d.getElementsByTagName('head')[0].appendChild(s);
                 w[x] = w[x] || function () { (w[x].ac = w[x].ac || []).push(arguments) };
-            })(window, document, 'amazon_connect', '9de6dec2-6bca-4ba6-aeea-866d9d6e3827');
+            })(window, document, 'amazon_connect', 'a6018f13-345c-4fa8-9ef1-601199d6559f');
         amazon_connect('styles', { iconType: 'CHAT_VOICE', openChat: { color: '#ffffff', backgroundColor: '#123456' }, closeChat: { color: '#ffffff', backgroundColor: '#123456' } });
-        amazon_connect('snippetId', 'QVFJREFIaDRobWZ4TDRrQys5SXJsU0RsT2NjaHpDOEQvN3ZqSEZkQWdhY1I3SUhoUXdHdTAySW5vWlBBT2NKVndFdVl3YnVKQUFBQWJqQnNCZ2txaGtpRzl3MEJCd2FnWHpCZEFnRUFNRmdHQ1NxR1NJYjNEUUVIQVRBZUJnbGdoa2dCWlFNRUFTNHdFUVFNNXJTa3FmdFR1eHd1b0FtREFnRVFnQ3Z3UFV3eUNVL3BnU1pqeXc2b09BNVczYVIxNG5GU3dIeitMQi9JRkZsdHVYSnZySEluUi9VUXhKL0c6Om9Balp6bmcxR3JxVGZoQmd0Yllqd2ZQdGxBQ25YbnM1dExGK05uUjdUc09XeXg0ZFdSbmFIZG92RkxPclRHMHkvZE81blJRekZTVitYVmhBNTJqZkJ3SnMxU0dMZjlMZWFiemJIMmJvcjV1ZWhJYWdqQ200ZXp5Nk5UOTRmY1AvcnZmQXJQNU05dEVpUTBvMmN3MmlrKzRRZHBjOEdBTT0=');
+        amazon_connect('snippetId', 'QVFJREFIaDRobWZ4TDRrQys5SXJsU0RsT2NjaHpDOEQvN3ZqSEZkQWdhY1I3SUhoUXdGRXVrRkZHakFHZm5jVFViODQ2aVFmQUFBQWJqQnNCZ2txaGtpRzl3MEJCd2FnWHpCZEFnRUFNRmdHQ1NxR1NJYjNEUUVIQVRBZUJnbGdoa2dCWlFNRUFTNHdFUVFNMTRmdGFENlZBRXg3RDVHeEFnRVFnQ3RidjQ4YlVmV054OEorRTZ5ZjhLTHU3cnQwdHVjMnlWM0tXZFpYbE5NNHpibjYwOGZlYmVzNnZaNXk6OjIvTi9UdkNMVHJnMTZTWEtLU1N2QjZMWWdGZHRqbkJUVHlDaWhwQjVnTis1UXR0YUNyWld4VFVSbmhoR0Z0YWw0ZVp1VExxa2R4aHRHdWMzZEZDb1ljNm1wSTNEcEV6ckZmb3o4cmNWeUlUZkNCUExCMEhwTE5DMEl2RWd1NWlRL1BwWDd4N3c5Ui95eHg2bnA5am5JL3lKeVNidSt4az0=');
         amazon_connect('supportedMessagingContentTypes', ['text/plain', 'text/markdown', 'application/vnd.amazonaws.connect.message.interactive', 'application/vnd.amazonaws.connect.message.interactive.response']);
-    </script>
-    <script>
-        function toggleAccordion(element) {
-            const isActive = element.classList.contains('active');
+    </script> function toggleAccordion(element) {
+    const isActive = element.classList.contains('active');
 
-            // Close all
-            document.querySelectorAll('.accordion-item').forEach(item => {
-                item.classList.remove('active');
-            });
+    // Close all
+    document.querySelectorAll('.accordion-item').forEach(item => {
+    item.classList.remove('active');
+    });
 
-            // If it wasn't active, open it
-            if (!isActive) {
-                element.classList.add('active');
-            }
-        }
+    // If it wasn't active, open it
+    if (!isActive) {
+    element.classList.add('active');
+    }
+    }
 
-        // Simple fade-in effect on scroll
-        const observerOptions = {
-            threshold: 0.1
-        };
+    // Simple fade-in effect on scroll
+    const observerOptions = {
+    threshold: 0.1
+    };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('opacity-100');
-                    entry.target.classList.remove('opacity-0', 'translate-y-8');
-                }
-            });
-        }, observerOptions);
+    const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+    if (entry.isIntersecting) {
+    entry.target.classList.add('opacity-100');
+    entry.target.classList.remove('opacity-0', 'translate-y-8');
+    }
+    });
+    }, observerOptions);
 
-        document.querySelectorAll('section').forEach(el => {
-            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-8');
-            observer.observe(el);
-        });
+    document.querySelectorAll('section').forEach(el => {
+    el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-8');
+    observer.observe(el);
+    });
     </script>
 </body>
 
