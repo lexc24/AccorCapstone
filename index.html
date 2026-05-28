@@ -1,13 +1,286 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>accor-call-center</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Support | LUMINA HOTELS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#091c34",
+                        "inverse-surface": "#2e3132",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#b6c7e7",
+                        "surface": "#f8f9fa",
+                        "surface-dim": "#d9dadb",
+                        "background": "#f8f9fa",
+                        "on-secondary-fixed": "#261900",
+                        "surface-container": "#edeeef",
+                        "on-tertiary-container": "#848686",
+                        "inverse-primary": "#b6c7e7",
+                        "secondary-fixed-dim": "#e9c176",
+                        "secondary-fixed": "#ffdea5",
+                        "inverse-on-surface": "#f0f1f2",
+                        "secondary-container": "#fed488",
+                        "surface-container-low": "#f3f4f5",
+                        "tertiary": "#030404",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#44474d",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#d5e3ff",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#7586a3",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "tertiary-container": "#1c1e1e",
+                        "on-secondary-container": "#785a1a",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-variant": "#e1e3e4",
+                        "secondary": "#775a19",
+                        "primary": "#00040e",
+                        "surface-bright": "#f8f9fa",
+                        "surface-tint": "#4e5f7a",
+                        "outline": "#74777e",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "surface-container-high": "#e7e8e9",
+                        "outline-variant": "#c4c6ce",
+                        "on-background": "#191c1d",
+                        "primary-container": "#0b1e36",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#191c1d",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#364762",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-tertiary-fixed": "#1a1c1c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "section-gap": "80px",
+                        "container-max": "1200px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "caption": ["Montserrat"],
+                        "body-lg": ["Montserrat"],
+                        "display-lg-mobile": ["Montserrat"],
+                        "display-lg": ["Montserrat"],
+                        "body-md": ["Montserrat"],
+                        "label-md": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            transition: all 0.3s ease;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, opacity 0.3s ease;
+            opacity: 0;
+        }
+        .accordion-item.active .accordion-content {
+            max-height: 200px;
+            opacity: 1;
+            padding-bottom: 24px;
+        }
+        .accordion-item.active .gold-icon {
+            transform: rotate(180deg);
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop h-20 max-w-container-max mx-auto bg-surface dark:bg-inverse-surface border-b border-primary/5 dark:border-white/5 shadow-sm">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary dark:text-inverse-primary" data-icon="spa">spa</span>
+<div class="font-headline-sm text-headline-sm font-bold tracking-widest text-primary dark:text-inverse-primary uppercase">
+                LUMINA HOTELS
+            </div>
+</div>
+<nav class="hidden md:flex gap-gutter items-center">
+<a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300" href="#">Concierge</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300" href="#">Rooms</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300" href="#">Wellness</a>
+<a class="text-secondary dark:text-secondary-fixed border-b-2 border-secondary pb-1 font-label-md text-label-md" href="#">Contact</a>
+</nav>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="bg-primary-container py-[120px] px-margin-mobile flex flex-col items-center justify-center text-center">
+<h1 class="font-display-lg text-display-lg text-white mb-unit*4 max-w-4xl">How can we help you?</h1>
+<p class="font-body-lg text-body-lg text-surface-variant/80 max-w-2xl mx-auto mt-4">
+                Our support team is available 24/7. Request a callback, browse common topics, or send us a message below.
+            </p>
+<div class="mt-12 w-full max-w-3xl relative">
+<input class="w-full bg-white border-none py-6 px-8 shadow-[0_10px_40px_rgba(11,30,54,0.1)] focus:ring-2 focus:ring-secondary/50 rounded-lg text-body-lg" placeholder="Search for help topics..." type="text"/>
+<span class="material-symbols-outlined absolute right-6 top-1/2 -translate-y-1/2 text-primary text-2xl" data-icon="search">search</span>
+</div>
+</section>
+<!-- Quick Action Cards - Expanded for Desktop -->
+<section class="max-w-container-max mx-auto px-margin-desktop -mt-16 mb-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter max-w-4xl mx-auto">
+<!-- Card 1: Request Callback -->
+<div class="bg-white p-10 border border-outline-variant/10 shadow-[0_20px_50px_rgba(11,30,54,0.08)] hover:border-secondary transition-all group flex flex-col items-center text-center">
+<div class="mb-6">
+<span class="material-symbols-outlined text-[48px] text-secondary" data-icon="call">call</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Request Callback</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">We'll call you back shortly to assist with your needs</p>
+<button class="font-label-md text-label-md text-secondary border-b border-secondary/30 pb-1 group-hover:border-secondary transition-all uppercase tracking-widest">Schedule Call</button>
+</div>
+<!-- Card 2: Email Us -->
+<div class="bg-white p-10 border border-outline-variant/10 shadow-[0_20px_50px_rgba(11,30,54,0.08)] hover:border-secondary transition-all group flex flex-col items-center text-center">
+<div class="mb-6">
+<span class="material-symbols-outlined text-[48px] text-secondary" data-icon="mail">mail</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Email Us</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Get a professional response from our concierge within 24hrs</p>
+<button class="font-label-md text-label-md text-secondary border-b border-secondary/30 pb-1 group-hover:border-secondary transition-all uppercase tracking-widest">Send Message</button>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="max-w-container-max mx-auto px-margin-desktop mb-section-gap">
+<div class="max-w-3xl mx-auto">
+<h2 class="font-headline-md text-headline-md text-primary-container text-center mb-12">Common Questions</h2>
+<div class="space-y-4">
+<!-- FAQ 1 -->
+<div class="accordion-item border-b border-primary/10 transition-all cursor-pointer bg-white/50 px-6 rounded-lg" onclick="toggleAccordion(this)">
+<div class="flex justify-between items-center py-6">
+<span class="font-body-lg text-body-lg font-semibold text-primary">How do I modify or cancel my reservation?</span>
+<span class="material-symbols-outlined gold-icon text-secondary" data-icon="expand_more">expand_more</span>
+</div>
+<div class="accordion-content">
+<p class="font-body-md text-body-md text-on-surface-variant">Our automated systems and concierge team are available to assist you. You can manage your booking through the 'My Bookings' section of our website or mobile app by logging into your account.</p>
+</div>
+</div>
+<!-- FAQ 2 -->
+<div class="accordion-item border-b border-primary/10 transition-all cursor-pointer bg-white/50 px-6 rounded-lg" onclick="toggleAccordion(this)">
+<div class="flex justify-between items-center py-6">
+<span class="font-body-lg text-body-lg font-semibold text-primary">What is your cancellation policy?</span>
+<span class="material-symbols-outlined gold-icon text-secondary" data-icon="expand_more">expand_more</span>
+</div>
+<div class="accordion-content">
+<p class="font-body-md text-body-md text-on-surface-variant">Cancellation policies vary by booking type and location. Generally, modifications must be made at least 48 hours prior to check-in for a full refund. Please review your specific confirmation email for details or contact your hotel directly.</p>
+</div>
+</div>
+<!-- FAQ 3 -->
+<div class="accordion-item border-b border-primary/10 transition-all cursor-pointer bg-white/50 px-6 rounded-lg" onclick="toggleAccordion(this)">
+<div class="flex justify-between items-center py-6">
+<span class="font-body-lg text-body-lg font-semibold text-primary">What are your standard customer service hours?</span>
+<span class="material-symbols-outlined gold-icon text-secondary" data-icon="expand_more">expand_more</span>
+</div>
+<div class="accordion-content">
+<p class="font-body-md text-body-md text-on-surface-variant">Our automated systems are available 24/7. Our global concierge and phone support teams are also available around the clock to ensure your stay is perfect regardless of your time zone.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Decorative Image Section -->
+<section class="w-full h-[500px] overflow-hidden mb-section-gap px-margin-desktop">
+<div class="w-full h-full max-w-container-max mx-auto relative group overflow-hidden rounded-xl">
+<img alt="Lumina Hotels Hospitality" class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXkdd2zbR6MEQxhxKbdOWWfURS659gFXROWml2III8AmI6B1Xa3pcHKowaczov5AFqUESQjCXoFlIPqB18YoRkLJ9U7FDleG0M7zlzDp52wFoNDuQ0wp4941XKhQgroOTnZhj_GK4YObBrG_MkD3u7DDcdaDT91YyEHRHoFX8lz3-96FVnZheZJabEjHNy80AkOeluTLDocqACotF_qH04JEo7w81AUw8zebh7hL1hIf6C-cO3jn0b85b-7wlUTDJkqs0dM9oFw34"/>
+<div class="absolute inset-0 bg-primary/30"></div>
+<div class="absolute bottom-16 left-16 text-white max-w-xl">
+<p class="font-label-md text-label-md uppercase tracking-[0.2em] mb-4 text-secondary-fixed">Excellence in Service</p>
+<h3 class="font-display-lg text-4xl md:text-5xl leading-tight">Your comfort is our <br/>absolute priority.</h3>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-gutter bg-surface-container-low dark:bg-surface-container border-t border-primary/5 dark:border-white/5">
+<div class="font-headline-sm text-headline-sm font-bold text-primary dark:text-inverse-primary uppercase tracking-widest">
+            LUMINA HOTELS
+        </div>
+<div class="flex flex-wrap justify-center gap-10 mt-6 md:mt-0">
+<a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300" href="#">Accessibility</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300" href="#">Global Support</a>
+</div>
+<div class="mt-8 md:mt-0 text-on-surface-variant font-caption text-caption opacity-60">
+            © 2024 LUMINA HOTELS &amp; RESORTS. ALL RIGHTS RESERVED.
+        </div>
+</footer>
+<!-- AMAZON CONNECT EMBED CODE START -->
+<div id="amazon-connect-chat-container" style="position: fixed; bottom: 40px; right: 40px; z-index: 9999;">
+<div class="hover:scale-110" style="background-color: #0B1E36; color: white; padding: 15px; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 30px rgba(0,0,0,0.4); cursor: pointer; transition: transform 0.3s ease;">
+<span class="text-2xl">💬</span>
+</div>
+</div>
+<!-- AMAZON CONNECT EMBED CODE END -->
+<script>
+        function toggleAccordion(element) {
+            const isActive = element.classList.contains('active');
+            
+            // Close all
+            document.querySelectorAll('.accordion-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // If it wasn't active, open it
+            if (!isActive) {
+                element.classList.add('active');
+            }
+        }
+
+        // Simple fade-in effect on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-8');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(el => {
+            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-8');
+            observer.observe(el);
+        });
+    </script>
+</body></html>
